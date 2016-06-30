@@ -1,5 +1,5 @@
 require('babel-register')({
-    presets: ['react']
+    presets: ['react', 'es2015']
 });
 
 var express = require('express');
@@ -19,7 +19,15 @@ app.get('/react/:component_name', function(request, response) {
   var componentName = capitalizeFirstLetter(request.params.component_name);
   console.log(componentName);
   var MyComponent = {
-    Onboarding: React.createElement(Onboarding, {title: 'Hello Onboarding'}),
+    Onboarding: React.createElement(Onboarding, {
+      data: {email: "testing@fromtheserver.com"},
+      handleChange: function(key, e) {
+        console.log(key);
+      },
+      error: {
+        email: 'hi there'
+      }
+    }),
     Component: React.createElement(Component, {title: 'Hello Component'})
   };
   var html = ReactDOMServer.renderToString(MyComponent[componentName]);

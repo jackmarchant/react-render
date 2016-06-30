@@ -22,7 +22,9 @@
     "react-dom": "^15.0.2",
     "webpack": "^1.13.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-preset-es2015": "^6.9.0"
+  },
   "private": true,
   "license": "MIT"
 }
