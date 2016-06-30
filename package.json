@@ -1,0 +1,28 @@
+{
+  "name": "react-server-renderer",
+  "version": "0.1.0",
+  "description": "A service that renders React components and returns a html string",
+  "author": "Jack <jack@jackmarchant.com>",
+  "scripts": {
+    "start": "webpack && nodemon server.js"
+  },
+  "main": "server.js",
+  "keywords": [
+    "universal react",
+    "isomorphic react",
+    "react server-side rendering"
+  ],
+  "dependencies": {
+    "babel-core": "^6.9.0",
+    "babel-loader": "^6.2.4",
+    "babel-preset-react": "^6.5.0",
+    "babel-register": "^6.9.0",
+    "express": "^4.13.4",
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2",
+    "webpack": "^1.13.1"
+  },
+  "devDependencies": {},
+  "private": true,
+  "license": "MIT"
+}
