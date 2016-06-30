@@ -26,6 +26,19 @@ app.get('/react/:component_name', function(request, response) {
   response.json({html: html});
 });
 
+app.post('/react/:component_name', function(request, response) {
+  var componentName = capitalizeFirstLetter(request.params.component_name);
+  console.log('request: ', request);
+
+  var props = {};
+  var MyComponent = {
+    Onboarding: React.createElement(Onboarding, props),
+    Component: React.createElement(Component, props)
+  };
+  var html = ReactDOMServer.renderToString(MyComponent[componentName]);
+  response.json({html: html});
+});
+
 var PORT = process.env.PORT || 3000;
 app.listen(PORT);
 
