@@ -8,17 +8,19 @@ var React = require('react');
 var ReactDOMServer = require('react-dom/server');
 var Component = require('./Component.jsx');
 var Onboarding = require('./Onboarding.jsx');
+var bodyParser = require('body-parser');
 
 app.use(express.static('public'));
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 app.get('/', function(request, response) {
     response.send('<h1>Go to /react/:component_name</h1>');
 });
 
 app.get('/react/:component_name', function(request, response) {
-  var componentName = capitalizeFirstLetter(request.params.component_name);
-  console.log(componentName);
-  var MyComponent = {
+  var component = capitalizeFirstLetter(request.params.component_name);
+  var Router = {
     Onboarding: React.createElement(Onboarding, {
       data: {email: "testing@fromtheserver.com"},
       handleChange: function(key, e) {
@@ -30,20 +32,19 @@ app.get('/react/:component_name', function(request, response) {
     }),
     Component: React.createElement(Component, {title: 'Hello Component'})
   };
-  var html = ReactDOMServer.renderToString(MyComponent[componentName]);
+  var html = ReactDOMServer.renderToString(Router[component]);
   response.json({html: html});
 });
 
 app.post('/react/:component_name', function(request, response) {
-  var componentName = capitalizeFirstLetter(request.params.component_name);
-  console.log('request: ', request);
+  var component = capitalizeFirstLetter(request.params.component_name);
 
-  var props = {};
-  var MyComponent = {
+  var props = request.body;
+  var Router = {
     Onboarding: React.createElement(Onboarding, props),
     Component: React.createElement(Component, props)
   };
-  var html = ReactDOMServer.renderToString(MyComponent[componentName]);
+  var html = ReactDOMServer.renderToString(Router[component]);
   response.json({html: html});
 });
 
