@@ -26,12 +26,6 @@ app.get('/react/:component_name', function(request, response) {
         email: "testing@fromtheserver.com",
         firstname: "Jack",
         lastname: 'Marchant'
-      },
-      handleChange: function(key, e) {
-        console.log(key);
-      },
-      error: {
-        email: 'hi there'
       }
     }),
     Component: React.createElement(Component, {title: 'Hello Component'})
