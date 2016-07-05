@@ -22,7 +22,11 @@ app.get('/react/:component_name', function(request, response) {
   var component = capitalizeFirstLetter(request.params.component_name);
   var Router = {
     Onboarding: React.createElement(Onboarding, {
-      data: {email: "testing@fromtheserver.com"},
+      data: {
+        email: "testing@fromtheserver.com",
+        firstname: "Jack",
+        lastname: 'Marchant'
+      },
       handleChange: function(key, e) {
         console.log(key);
       },

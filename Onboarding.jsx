@@ -143,6 +143,9 @@ class Onboarding extends React.Component {
           </div>
         </fieldset>
         {this.renderTermsCheckbox()}
+        <button className="c-button c-button--primary" type="submit">
+          Submit
+        </button>
       </fieldset>
     );
   }
