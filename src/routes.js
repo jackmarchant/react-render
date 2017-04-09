@@ -12,11 +12,13 @@ var createRoutes = function(app) {
   });
 
   app.get('/:component_name', function(request, response) {
-    response.send(renderWithProps(request.params.component_name, request.body));
+    const props = Object.keys(request.query).length > 0 ? request.query : {title: 'Try appending ?title=hello to the URL'};
+    response.send(renderWithProps(request.params.component_name, props));
   });
 
   app.post('/:component_name', function(request, response) {
-    response.send(renderWithProps(request.params.component_name, request.body));
+    const props = Object.keys(request.body).length > 0 ? request.body : {title: 'Try posting a JSON object `{"title": "hello"}`'};
+    response.send(renderWithProps(request.params.component_name, props));
   });
 };
 
