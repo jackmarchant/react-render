@@ -1,16 +1,19 @@
 {
   "name": "react-server-renderer",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A service that renders React components and returns html",
   "author": "Jack <jack@jackmarchant.com>",
   "scripts": {
     "start": "nodemon server.js"
   },
-  "main": "server.js",
+  "main": "src/server.js",
   "keywords": [
     "universal react",
     "isomorphic react",
-    "react server-side rendering"
+    "react",
+    "server-side",
+    "render",
+    "node"
   ],
   "dependencies": {
     "babel-core": "^6.9.0",
