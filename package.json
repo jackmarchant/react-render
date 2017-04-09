@@ -1,10 +1,10 @@
 {
   "name": "react-server-renderer",
   "version": "0.1.0",
-  "description": "A service that renders React components and returns a html string",
+  "description": "A service that renders React components and returns html",
   "author": "Jack <jack@jackmarchant.com>",
   "scripts": {
-    "start": "webpack && nodemon server.js"
+    "start": "nodemon server.js"
   },
   "main": "server.js",
   "keywords": [
@@ -24,7 +24,9 @@
     "react-dom": "^15.0.2",
     "webpack": "^1.13.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
   "private": true,
   "license": "MIT"
 }
