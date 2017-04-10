@@ -1,11 +1,8 @@
-require('babel-register')({
-  presets: ['react', 'es2015']
-});
+import express from 'express';
+import bodyParser from 'body-parser';
+import createRoutes from './routes';
 
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-var createRoutes = require('./routes');
+const app = express();
 
 app.use(express.static('public'));
 app.use(bodyParser.json()); // support json encoded bodies

@@ -1,6 +1,6 @@
-var React = require('react');
+import React from 'react';
 
-var testComponent = function(props) {
+const testComponent = props => {
   return (
     <div className="component">
       <h1>{props.title}</h1>
@@ -8,4 +8,4 @@ var testComponent = function(props) {
   );
 };
 
-module.exports = testComponent;
+export default testComponent;

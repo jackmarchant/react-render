@@ -1,9 +1,9 @@
-var React = require('react');
-var Page = require('./shared/Page');
-var Link = require('./shared/Link');
-var Code = require('./shared/Code');
+import React from 'react';
+import Page from './shared/Page';
+import Link from './shared/Link';
+import Code from './shared/Code';
 
-var Home = function(props) {
+const Home = props => {
   return (
     <Page
       title="Jack Marchant - Web Developer"
@@ -24,4 +24,4 @@ var Home = function(props) {
   );
 };
 
-module.exports = Home;
+export default Home;

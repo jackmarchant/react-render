@@ -1,9 +1,9 @@
-var React = require('react');
+import React from 'react';
 
-var Link = function(props) {
+const Link = props => {
   return (
     <a href={props.to}>{props.children}</a>
   );
 };
 
-module.exports = Link;
+export default Link;

@@ -1,6 +1,6 @@
-var React = require('react');
+import React from 'react';
 
-var Header = function(props) {
+const Header = props => {
   return (
     <header className="intro-header">
       <div className="container">
@@ -18,4 +18,4 @@ var Header = function(props) {
   );
 };
 
-module.exports = Header;
+export default Header;

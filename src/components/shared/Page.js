@@ -1,8 +1,8 @@
-var React = require('react');
-var Header = require('./Header');
-var Footer = require('./Footer');
+import React from 'react';
+import Header from './Header';
+import Footer from './Footer';
 
-var Page = function(props) {
+const Page = props => {
   return (
     <html>
       <head>
@@ -22,4 +22,4 @@ var Page = function(props) {
   );
 };
 
-module.exports = Page;
+export default Page;

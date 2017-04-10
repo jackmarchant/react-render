@@ -1,6 +1,6 @@
-var React = require('react');
+import React from 'react';
 
-var Footer = function(props) {
+const Footer = props => {
   return (
     <footer>
       <div className="container">
@@ -40,4 +40,4 @@ var Footer = function(props) {
   );
 };
 
-module.exports = Footer;
+export default Footer;
