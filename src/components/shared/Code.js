@@ -1,6 +1,6 @@
-var React = require('react');
+import React from 'react';
 
-var Code = function(props) {
+const Code = props => {
   return (
     <pre
      className="container">
@@ -9,4 +9,4 @@ var Code = function(props) {
   );
 };
 
-module.exports = Code;
+export default Code;

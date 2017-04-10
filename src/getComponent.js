@@ -1,11 +1,9 @@
-var React = require('react');
+import React from 'react';
+import Component from './components/Component';
+import Home from './components/Home';
 
-// internal components
-var Component = require('./components/Component');
-var Home = require('./components/Home');
-
-var mergePropsWithEnv = function(initialProps) {
-  var environmentProps = {
+const mergePropsWithEnv = initialProps => {
+  const environmentProps = {
     BASE_URI: process.env.BASE_URI
   };
   return Object.assign({}, initialProps, {
@@ -13,16 +11,10 @@ var mergePropsWithEnv = function(initialProps) {
   });
 };
 
-var getComponent = function(component, props) {
-  var createElement = function(props) {
-    return function(el) {
-      return React.createElement(el, props);
-    };
-  };
-  var createElementWithPreloadedProps = function(el) {
-    return createElement(mergePropsWithEnv(props))(el);
-  };
-  var internalComponents = {
+const getComponent = (component, props) => {
+  const createElement = props => el => React.createElement(el, props);
+  const createElementWithPreloadedProps = el => createElement(mergePropsWithEnv(props))(el);
+  const internalComponents = {
     component: createElementWithPreloadedProps(Component),
     home: createElementWithPreloadedProps(Home),
   };
@@ -30,4 +22,4 @@ var getComponent = function(component, props) {
   return internalComponents[component];
 };
 
-module.exports = getComponent;
+export default getComponent;
