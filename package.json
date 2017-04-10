@@ -4,6 +4,7 @@
   "description": "A service that renders React components and returns html",
   "author": "Jack <jack@jackmarchant.com>",
   "scripts": {
+    "build": "node_modules/.bin/babel src -d dist",
     "start": "node_modules/.bin/babel-watch src/server.js"
   },
   "main": "src/server.js",
